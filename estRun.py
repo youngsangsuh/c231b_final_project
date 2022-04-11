@@ -64,7 +64,7 @@ def estRun(time, dt, internalStateIn, steeringAngle, pedalSpeed, measurement):
     radius_m = 0.425
     baseline_m = 0.8
     # NOTE(youngsang): assume radius and baseline follow uniform distribution
-    # also assume that variance of gamma and omega process noise is 0.5
+    # also assume that variance of gamma and omega process noise is 0.1
     radius_var = pow(2 * 0.05 * radius_m, 2) / 12
     baseline_var = pow(2 * 0.1 * baseline_m, 2) / 12
     sig_vv = np.array([[radius_var, 0, 0, 0], [0, baseline_var, 0, 0], [0, 0, 0.1, 0], [0, 0, 0, 0.1]], dtype=object)
