@@ -12,14 +12,15 @@ numDataPoints = experimentalData.shape[0]
 
 idx = np.all([~np.isnan(experimentalData[:,3]), ~np.isnan(experimentalData[:,4])],axis=0)
 
-measx = experimentalData[idx, 3]
-measy = experimentalData[idx, 4]
+finalPosX = experimentalData[-1,5]
+finalPosY = experimentalData[-1,6]
+
+measx = experimentalData[idx, 3] - finalPosX
+measy = experimentalData[idx, 4] - finalPosY
 
 covMatrix = np.cov(np.array([measx, measy]))
 meanMatrix = np.mean(np.array([measx, measy]), axis=1)
 
-finalPosX = experimentalData[-1,5]
-finalPosY = experimentalData[-1,6]
 
 print('Covariance matrix of measurement noise: \n', covMatrix)
 print('Mean of measurement noise: \n', meanMatrix)

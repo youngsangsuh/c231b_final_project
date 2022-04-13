@@ -72,7 +72,9 @@ def estRun(time, dt, internalStateIn, steeringAngle, pedalSpeed, measurement):
 
     # NOTE(youngsang): measurement noise computed from calibration data (run 0)
     sig_ww = np.array([[1.08933973, 1.53329122], [1.53329122, 2.98795486]], dtype=object)
+    # sig_ww = np.array([[2.25617, 1.721767], [1.721767, 4.135752]], dtype=object)
     mean_w = np.array([0.18752364358711568, 0.3962695841848831], dtype=object)
+    # mean_w = np.array([0, 0], dtype=object)
 
     # prior update
     vel = 5 * radius_m * omega 
